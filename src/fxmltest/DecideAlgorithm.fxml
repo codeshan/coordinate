@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxmltest.DecideAlgorithm">
+   <children>
+      <Label layoutX="108.0" layoutY="105.0" text="设计方案：">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="108.0" layoutY="173.0" text="是否有超高：">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="108.0" layoutY="244.0" text="预制方向：">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <ChoiceBox layoutX="267.0" layoutY="106.0" prefWidth="150.0" />
+      <ChoiceBox layoutX="267.0" layoutY="174.0" prefWidth="150.0" />
+      <ChoiceBox layoutX="267.0" layoutY="245.0" prefWidth="150.0" />
+      <Label layoutX="35.0" layoutY="14.0" text="三维线形控制交线坐标计算" textFill="#58791a">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button layoutX="203.0" layoutY="329.0" mnemonicParsing="false" text="确定" />
+   </children>
+</AnchorPane>
