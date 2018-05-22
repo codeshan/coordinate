@@ -33,13 +33,10 @@ public final class CalculationResultUtils {
         for (int i=0;i<params.size();i++ ){
             //计算G
             double g = params.get(i).getD()/2;
-            System.out.println(g);
             //计算C
             double c = params.get(i).getF() + g;
-            System.out.println(c);
             //计算N
             double n = params.get(i).getE() - params.get(i).getF();
-            System.out.println(n);
             //计算K
             double k;
             //判断上行还是下行
@@ -59,10 +56,8 @@ public final class CalculationResultUtils {
                     k = (params.get(i+1).getRoadMiddleY()-params.get(i).getRoadMiddleY())/(params.get(i+1).getRoadMiddleX() - params.get(i).getRoadMiddleX());
                 }
             }
-            System.out.println(k);
             //计算B
             double b = params.get(i).getRoadMiddleY()-((-1/k)*(params.get(i).getRoadMiddleX()));
-            System.out.println(b);
             //计算A和M
             double a,m;
             if ("左幅".equals(params.get(i).getV())){
@@ -72,7 +67,6 @@ public final class CalculationResultUtils {
                 a = 1;
                 m = -1;
             }
-            System.out.println(a+m);
             //计算i(x/y/z) i'(x/y/z) i''(x/y/z)
             result = new Result();
             result.setFlowNum(i+1);

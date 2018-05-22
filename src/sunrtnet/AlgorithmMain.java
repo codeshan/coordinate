@@ -1,5 +1,6 @@
 package sunrtnet;
 
+import entity.Result;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXMLLoader;
@@ -15,6 +16,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -73,6 +75,15 @@ public class AlgorithmMain extends Application {
         try {
             Calculation calculation = (Calculation) replaceSceneContent("Calculation.fxml");
             calculation.setApp(this,value);
+        }catch (Exception ex){
+            Logger.getLogger(AlgorithmMain.class.getName()).log(Level.SEVERE,null,ex);
+        }
+    }
+    //跳转到结果显示窗口
+    public void startResult(List<Result> results, String value){
+        try {
+            ShowResult showResult = (ShowResult) replaceSceneContent("ShowResult.fxml");
+            showResult.setApp(this,results,value);
         }catch (Exception ex){
             Logger.getLogger(AlgorithmMain.class.getName()).log(Level.SEVERE,null,ex);
         }

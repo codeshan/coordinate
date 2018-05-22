@@ -38,6 +38,9 @@ public class Calculation implements Initializable {
     }
 
     public void getResult(ActionEvent actionEvent) {
+
+        List<Result> results = new ArrayList<>();
+
         String paramStr = first.getText();
         String[] paramArray = paramStr.split("\n");
         if (AlgorithmValue.ROAD_MIDDLE_UN_SUPER_HIGH_UPLINK.equals(algorithmValue) || AlgorithmValue.ROAD_MIDDLE_UN_SUPER_HIGH_DOWNLINK.equals(algorithmValue)){
@@ -59,9 +62,10 @@ public class Calculation implements Initializable {
                 param.setV(strs[8]);
                 params.add(param);
             }
-            List<Result> results = CalculationResultUtils.oneOne(params, algorithmValue);
-            System.out.println(results);
+            results = CalculationResultUtils.oneOne(params, algorithmValue);
         }
+
+        application.startResult(results,algorithmValue);
     }
 
     @Override
