@@ -1,8 +1,10 @@
-package fxmltest;
+package sunrtnet;
 
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ChoiceBox;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -16,7 +18,12 @@ import java.util.ResourceBundle;
  * Changelog:
  * Revision 1.0  2018/5/21 shanchanglu
  */
-public class Welcome implements Initializable {
+public class DecideAlgorithm implements Initializable {
+
+    public ChoiceBox designPlan;
+    public ChoiceBox isSuperHigh;
+    public ChoiceBox preDirection;
+
 
     private AlgorithmMain application;
 
@@ -25,12 +32,16 @@ public class Welcome implements Initializable {
     }
 
     @FXML
-    public void startCalculate(ActionEvent actionEvent) {
-        application.startCalculate();
+    public void confirm(ActionEvent actionEvent) {
+        System.out.println(designPlan.getValue());
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+    }
+
+    public void nextStep(ActionEvent actionEvent) {
+        System.out.println(designPlan.getValue());
     }
 }

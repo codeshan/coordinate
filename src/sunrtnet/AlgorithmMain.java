@@ -1,11 +1,16 @@
-package fxmltest;
+package sunrtnet;
 
 import javafx.application.Application;
+import javafx.collections.FXCollections;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.fxml.JavaFXBuilderFactory;
+import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Tooltip;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -84,5 +89,4 @@ public class AlgorithmMain extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-
 }
