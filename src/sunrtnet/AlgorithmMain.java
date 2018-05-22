@@ -42,7 +42,7 @@ public class AlgorithmMain extends Application {
         gotologin();
         stage.show();
     }
-
+    //欢迎页面
     private void gotologin() {
         try {
             Welcome login = (Welcome) replaceSceneContent("Welcome.fxml");
@@ -52,6 +52,10 @@ public class AlgorithmMain extends Application {
         }
     }
 
+    //确认算法页面
+    public void startCalculate() {
+        gotomain();
+    }
     private void gotomain() {
         try {
             DecideAlgorithm main = (DecideAlgorithm) replaceSceneContent("DecideAlgorithm.fxml");
@@ -60,13 +64,18 @@ public class AlgorithmMain extends Application {
             Logger.getLogger(AlgorithmMain.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
-    public void startCalculate() {
-        gotomain();
+    //跳转到计算窗口
+    public void startCalculation(String value) {
+        gotoCalculation(value);
     }
 
-    public void useroutmain() {
-        gotologin();
+    private void gotoCalculation(String value) {
+        try {
+            Calculation calculation = (Calculation) replaceSceneContent("Calculation.fxml");
+            calculation.setApp(this,value);
+        }catch (Exception ex){
+            Logger.getLogger(AlgorithmMain.class.getName()).log(Level.SEVERE,null,ex);
+        }
     }
 
     private Initializable replaceSceneContent(String fxml) throws IOException {

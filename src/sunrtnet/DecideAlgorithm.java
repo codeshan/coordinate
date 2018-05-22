@@ -1,10 +1,10 @@
 package sunrtnet;
 
-import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
+import utils.ConfirmAlgorithmUtil;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -32,16 +32,16 @@ public class DecideAlgorithm implements Initializable {
     }
 
     @FXML
-    public void confirm(ActionEvent actionEvent) {
+    public void nextStep(ActionEvent actionEvent) {
         System.out.println(designPlan.getValue());
+        System.out.println(isSuperHigh.getValue());
+        System.out.println(preDirection.getValue());
+        String value = ConfirmAlgorithmUtil.confirm(String.valueOf(designPlan.getValue()), String.valueOf(isSuperHigh.getValue()), String.valueOf(preDirection.getValue()));
+        application.startCalculation(value);
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-    }
-
-    public void nextStep(ActionEvent actionEvent) {
-        System.out.println(designPlan.getValue());
     }
 }
