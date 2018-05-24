@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-
+<?import javafx.scene.text.Text?>
 <AnchorPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sunrtnet.ShowResult">
-   <children>
-   
+
        <Label layoutX="35.0" layoutY="14.0" text="三维线形控制交线坐标计算" textFill="#58791a">
            <font>
                <Font size="14.0" />
@@ -48,5 +43,4 @@
                </columns></TableColumn>
         </columns>
       </TableView>
-   </children>
-</AnchorPane>
+   </AnchorPane>
