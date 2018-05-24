@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sunrtnet.ShowResult">
+<AnchorPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sunrtnet.ShowResult">
    <children>
    
        <Label layoutX="35.0" layoutY="14.0" text="三维线形控制交线坐标计算" textFill="#58791a">
@@ -21,10 +21,32 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Text fill="#367cd6" layoutX="119.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" text="知人者智，自知者明。胜人者有力，自胜者强。">
+      <Text fill="#367cd6" layoutX="373.0" layoutY="609.0" strokeType="OUTSIDE" strokeWidth="0.0" text="知人者智，自知者明。胜人者有力，自胜者强。">
          <font>
             <Font name="Dubai Regular" size="24.0" />
          </font>
       </Text>
+      <TableView fx:id="tableView" layoutX="35.0" layoutY="100.0" prefHeight="399.0" prefWidth="760.0">
+        <columns>
+            <TableColumn fx:id="i" prefWidth="85.0" text="i">
+               <columns>
+                  <TableColumn fx:id="ix" prefWidth="85.0" text="X" />
+                  <TableColumn fx:id="iy" prefWidth="85.0" text="Y" />
+                  <TableColumn fx:id="iz" prefWidth="85.0" text="Z" />
+               </columns></TableColumn>
+            <TableColumn fx:id="ii" prefWidth="85.0" text="i'">
+               <columns>
+                  <TableColumn fx:id="iix" prefWidth="85.0" text="X" />
+                  <TableColumn fx:id="iiy" prefWidth="85.0" text="Y" />
+                  <TableColumn fx:id="iiz" prefWidth="85.0" text="Z" />
+               </columns></TableColumn>
+            <TableColumn fx:id="iii" prefWidth="85.0" text="i''">
+               <columns>
+                  <TableColumn fx:id="iiix" prefWidth="85.0" text="X" />
+                  <TableColumn fx:id="iiiy" prefWidth="85.0" text="Y" />
+                  <TableColumn fx:id="iiiz" prefWidth="85.0" text="Z" />
+               </columns></TableColumn>
+        </columns>
+      </TableView>
    </children>
 </AnchorPane>

@@ -32,8 +32,8 @@ import java.util.logging.Logger;
 public class AlgorithmMain extends Application {
 
     private Stage stage;
-    private final double MINIMUM_WINDOW_WIDTH = 400.0;
-    private final double MINIMUM_WINDOW_HEIGHT = 250.0;
+    private final double MINIMUM_WINDOW_WIDTH = 800.0;
+    private final double MINIMUM_WINDOW_HEIGHT = 500.0;
 
     @Override
     public void start(Stage primaryStage) {
@@ -100,7 +100,7 @@ public class AlgorithmMain extends Application {
         }finally {
             in.close();
         }
-        Scene scene = new Scene(page,800,600);
+        Scene scene = new Scene(page,900,700);
         stage.setScene(scene);
         stage.sizeToScene();
         return (Initializable)loader.getController();
