@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
-<AnchorPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sunrtnet.ShowResult">
+
+<AnchorPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sunrtnet.ShowResult">
 
        <Label layoutX="35.0" layoutY="14.0" text="三维线形控制交线坐标计算" textFill="#58791a">
            <font>
@@ -43,4 +47,5 @@
                </columns></TableColumn>
         </columns>
       </TableView>
+   <Button layoutX="788.0" layoutY="39.0" mnemonicParsing="false" text="返回计算" onAction="#returnCal" />
    </AnchorPane>

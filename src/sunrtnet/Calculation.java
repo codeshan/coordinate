@@ -2,6 +2,7 @@ package sunrtnet;
 
 import contants.AlgorithmValue;
 import entity.OneOneParam;
+import entity.OneTwoParam;
 import entity.Result;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -11,7 +12,6 @@ import utils.CalculationResultUtils;
 
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -44,6 +44,7 @@ public class Calculation implements Initializable {
         String paramStr = first.getText();
         String[] paramArray = paramStr.split("\n");
         if (AlgorithmValue.ROAD_MIDDLE_UN_SUPER_HIGH_UPLINK.equals(algorithmValue) || AlgorithmValue.ROAD_MIDDLE_UN_SUPER_HIGH_DOWNLINK.equals(algorithmValue)){
+            //路中无超高
             List<OneOneParam> params = new ArrayList<>();
             OneOneParam param;
             int i = 1;
@@ -63,6 +64,25 @@ public class Calculation implements Initializable {
                 params.add(param);
             }
             results = CalculationResultUtils.oneOne(params, algorithmValue);
+        } else if (AlgorithmValue.ROAD_MIDDLE_SUPER_HIGH_UNLINK.equals(algorithmValue) || AlgorithmValue.ROAD_MIDDLE_SUPER_HIGH_DOWNLINK.equals(algorithmValue)){
+            //路中有超高
+            List<OneTwoParam> params = new ArrayList<>();
+            OneTwoParam param;
+            int i = 1;
+            for (String temp : paramArray){
+                String[] strs = temp.split("\t");
+                param = new OneTwoParam();
+                param.setFlowNum(i++);
+                param.setRoadMiddleX(Double.valueOf(strs[0]));
+                param.setRoadMiddleY(Double.valueOf(strs[1]));
+                param.setPz(Double.valueOf(strs[2]));
+                param.setDesignH(Double.valueOf(strs[3]));
+
+            }
+        } else if (AlgorithmValue.ROAD_SIDE_UN_SUPER_HIGH_UNLINK.equals(algorithmValue) || AlgorithmValue.ROAD_SIDE_UN_SUPER_HIGH_DOWNLINK.equals(algorithmValue)){
+            //路测无超高
+        }else if (AlgorithmValue.ROAD_SIDE_SUPER_HIGH_UNLINK.equals(algorithmValue) || AlgorithmValue.ROAD_SIDE_SUPER_HIGH_DOWNLINK.equals(algorithmValue)){
+            //路测有超高
         }
 
         application.startResult(results,algorithmValue);
